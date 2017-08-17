@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 from flask import Flask, jsonify, make_response, abort, request, g
 from functools import wraps
