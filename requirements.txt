@@ -1,2 +1,2 @@
-Flask==0.12.2.dev0
+Flask==0.12.2
 Werkzeug==0.12.2
