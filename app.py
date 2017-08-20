@@ -109,7 +109,7 @@ def get_order(order_id):
     app.logger.info(order)
     return jsonify({'order': order})
 
-@app.route('/marketorders', methods=['POST'])
+@app.route('/marketorders.ingest', methods=['POST'])
 def ingest_orders():
     if not request.json:
         abort(400)
