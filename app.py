@@ -15,6 +15,9 @@ DATABASE = 'db.sqlite3'
 cache = SimpleCache()
 
 def init_db():
+    if not os.path.isfile(DATABASE):
+        init_db()
+
     with app.app_context():
         db = get_db()
         with app.open_resource('schema.sql', mode='r') as f:
@@ -130,7 +133,4 @@ def handle_404(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
 
 if __name__ == '__main__':
-    if not os.path.isfile(DATABASE):
-        init_db()
-
     app.run(host='0.0.0.0', debug=True)
