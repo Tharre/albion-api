@@ -14,10 +14,10 @@ DATABASE = 'db.sqlite3'
 
 cache = SimpleCache()
 
-def init_db():
-    if not os.path.isfile(DATABASE):
-        init_db()
+if not os.path.isfile(DATABASE):
+    init_db()
 
+def init_db():
     with app.app_context():
         db = get_db()
         with app.open_resource('schema.sql', mode='r') as f:
